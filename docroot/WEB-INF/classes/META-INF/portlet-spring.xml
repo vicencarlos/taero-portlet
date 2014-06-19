@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="home.cvicente.livetasks.service.TaskLocalService" class="home.cvicente.livetasks.service.impl.TaskLocalServiceImpl" />
+	<bean id="home.cvicente.livetasks.service.TaskService" class="home.cvicente.livetasks.service.impl.TaskServiceImpl" />
+	<bean id="home.cvicente.livetasks.service.persistence.TaskPersistence" class="home.cvicente.livetasks.service.persistence.TaskPersistenceImpl" parent="basePersistence" />
+	<bean id="home.cvicente.livetasks.service.TaskTypeLocalService" class="home.cvicente.livetasks.service.impl.TaskTypeLocalServiceImpl" />
+	<bean id="home.cvicente.livetasks.service.TaskTypeService" class="home.cvicente.livetasks.service.impl.TaskTypeServiceImpl" />
+	<bean id="home.cvicente.livetasks.service.persistence.TaskTypePersistence" class="home.cvicente.livetasks.service.persistence.TaskTypePersistenceImpl" parent="basePersistence" />
+</beans>

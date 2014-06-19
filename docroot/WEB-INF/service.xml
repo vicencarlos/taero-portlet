@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+<service-builder package-path="home.cvicente.livetasks">
+	<author>cvicente</author>
+	<namespace>lvt</namespace>
+<entity name="TaskType" uuid="true" local-service="true" remote-service="true" json-enabled="false"
+                         >
+
+                <!-- PK fields -->
+                <column name="typeId" type="long" primary="true" />
+               
+                <!-- Audit fields -->
+                <column name="companyId" type="long" />
+                <column name="userId" type="long" />
+                <column name="groupId" type="long" />
+                <column name="userName" type="String" />
+                <column name="createDate" type="Date" />
+                <column name="modifiedDate" type="Date" />
+
+                <column name="status" type="int" />
+                <column name="statusByUserId" type="long" />
+                <column name="statusByUserName" type="String" />
+                <column name="statusDate" type="Date" />
+                <!-- Other fields -->
+
+                <column name="title" type="String"/>
+                <column name="description" type="String"/>
+        <order by="asc">
+            <order-column name="title"></order-column>
+        </order>
+                
+                 <finder name="GroupId" return-type="Collection">
+                        <finder-column name="groupId" />
+                </finder>
+                <finder name="CompanyId" return-type="Collection">
+                        <finder-column name="companyId" />
+                </finder>
+                
+ <reference package-path="com.liferay.portal" entity="ResourcePermission" />
+                <reference package-path="com.liferay.portlet.asset" entity="AssetEntry" />
+
+	</entity>
+	<entity name="Task" uuid="true" local-service="true" remote-service="true" json-enabled="false"
+                         >
+
+                <!-- PK fields -->
+                <column name="taskId" type="long" primary="true" />
+               
+                <!-- Audit fields -->
+                <column name="companyId" type="long" />
+                <column name="userId" type="long" />
+                <column name="groupId" type="long" />
+                <column name="userName" type="String" />
+                <column name="createDate" type="Date" />
+                <column name="modifiedDate" type="Date" />
+
+                <column name="status" type="int" />
+                <column name="statusByUserId" type="long" />
+                <column name="statusByUserName" type="String" />
+                <column name="statusDate" type="Date" />
+
+
+                <!-- Other fields -->
+				<column name="typeId" type="long" json-enabled="false"/>
+                <column name="title" type="String"/>
+                <column name="description" type="String"/>
+	 <reference package-path="com.liferay.portal" entity="ResourcePermission" />
+                <reference package-path="com.liferay.portlet.asset" entity="AssetEntry" />
+	
+	</entity>
+</service-builder>
