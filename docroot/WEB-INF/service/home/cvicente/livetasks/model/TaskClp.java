@@ -91,6 +91,11 @@ public class TaskClp extends BaseModelImpl<Task> implements Task {
 		attributes.put("typeId", getTypeId());
 		attributes.put("title", getTitle());
 		attributes.put("description", getDescription());
+		attributes.put("asigneeClasName", getAsigneeClasName());
+		attributes.put("asigneeClassPK", getAsigneeClassPK());
+		attributes.put("statusId", getStatusId());
+		attributes.put("comment", getComment());
+		attributes.put("parentTaskId", getParentTaskId());
 
 		return attributes;
 	}
@@ -185,6 +190,36 @@ public class TaskClp extends BaseModelImpl<Task> implements Task {
 
 		if (description != null) {
 			setDescription(description);
+		}
+
+		String asigneeClasName = (String)attributes.get("asigneeClasName");
+
+		if (asigneeClasName != null) {
+			setAsigneeClasName(asigneeClasName);
+		}
+
+		Long asigneeClassPK = (Long)attributes.get("asigneeClassPK");
+
+		if (asigneeClassPK != null) {
+			setAsigneeClassPK(asigneeClassPK);
+		}
+
+		Long statusId = (Long)attributes.get("statusId");
+
+		if (statusId != null) {
+			setStatusId(statusId);
+		}
+
+		Long comment = (Long)attributes.get("comment");
+
+		if (comment != null) {
+			setComment(comment);
+		}
+
+		Long parentTaskId = (Long)attributes.get("parentTaskId");
+
+		if (parentTaskId != null) {
+			setParentTaskId(parentTaskId);
 		}
 	}
 
@@ -556,6 +591,122 @@ public class TaskClp extends BaseModelImpl<Task> implements Task {
 	}
 
 	@Override
+	public String getAsigneeClasName() {
+		return _asigneeClasName;
+	}
+
+	@Override
+	public void setAsigneeClasName(String asigneeClasName) {
+		_asigneeClasName = asigneeClasName;
+
+		if (_taskRemoteModel != null) {
+			try {
+				Class<?> clazz = _taskRemoteModel.getClass();
+
+				Method method = clazz.getMethod("setAsigneeClasName",
+						String.class);
+
+				method.invoke(_taskRemoteModel, asigneeClasName);
+			}
+			catch (Exception e) {
+				throw new UnsupportedOperationException(e);
+			}
+		}
+	}
+
+	@Override
+	public long getAsigneeClassPK() {
+		return _asigneeClassPK;
+	}
+
+	@Override
+	public void setAsigneeClassPK(long asigneeClassPK) {
+		_asigneeClassPK = asigneeClassPK;
+
+		if (_taskRemoteModel != null) {
+			try {
+				Class<?> clazz = _taskRemoteModel.getClass();
+
+				Method method = clazz.getMethod("setAsigneeClassPK", long.class);
+
+				method.invoke(_taskRemoteModel, asigneeClassPK);
+			}
+			catch (Exception e) {
+				throw new UnsupportedOperationException(e);
+			}
+		}
+	}
+
+	@Override
+	public long getStatusId() {
+		return _statusId;
+	}
+
+	@Override
+	public void setStatusId(long statusId) {
+		_statusId = statusId;
+
+		if (_taskRemoteModel != null) {
+			try {
+				Class<?> clazz = _taskRemoteModel.getClass();
+
+				Method method = clazz.getMethod("setStatusId", long.class);
+
+				method.invoke(_taskRemoteModel, statusId);
+			}
+			catch (Exception e) {
+				throw new UnsupportedOperationException(e);
+			}
+		}
+	}
+
+	@Override
+	public long getComment() {
+		return _comment;
+	}
+
+	@Override
+	public void setComment(long comment) {
+		_comment = comment;
+
+		if (_taskRemoteModel != null) {
+			try {
+				Class<?> clazz = _taskRemoteModel.getClass();
+
+				Method method = clazz.getMethod("setComment", long.class);
+
+				method.invoke(_taskRemoteModel, comment);
+			}
+			catch (Exception e) {
+				throw new UnsupportedOperationException(e);
+			}
+		}
+	}
+
+	@Override
+	public long getParentTaskId() {
+		return _parentTaskId;
+	}
+
+	@Override
+	public void setParentTaskId(long parentTaskId) {
+		_parentTaskId = parentTaskId;
+
+		if (_taskRemoteModel != null) {
+			try {
+				Class<?> clazz = _taskRemoteModel.getClass();
+
+				Method method = clazz.getMethod("setParentTaskId", long.class);
+
+				method.invoke(_taskRemoteModel, parentTaskId);
+			}
+			catch (Exception e) {
+				throw new UnsupportedOperationException(e);
+			}
+		}
+	}
+
+	@Override
 	public StagedModelType getStagedModelType() {
 		return new StagedModelType(PortalUtil.getClassNameId(
 				Task.class.getName()));
@@ -733,6 +884,11 @@ public class TaskClp extends BaseModelImpl<Task> implements Task {
 		clone.setTypeId(getTypeId());
 		clone.setTitle(getTitle());
 		clone.setDescription(getDescription());
+		clone.setAsigneeClasName(getAsigneeClasName());
+		clone.setAsigneeClassPK(getAsigneeClassPK());
+		clone.setStatusId(getStatusId());
+		clone.setComment(getComment());
+		clone.setParentTaskId(getParentTaskId());
 
 		return clone;
 	}
@@ -781,7 +937,7 @@ public class TaskClp extends BaseModelImpl<Task> implements Task {
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(31);
+		StringBundler sb = new StringBundler(41);
 
 		sb.append("{uuid=");
 		sb.append(getUuid());
@@ -813,6 +969,16 @@ public class TaskClp extends BaseModelImpl<Task> implements Task {
 		sb.append(getTitle());
 		sb.append(", description=");
 		sb.append(getDescription());
+		sb.append(", asigneeClasName=");
+		sb.append(getAsigneeClasName());
+		sb.append(", asigneeClassPK=");
+		sb.append(getAsigneeClassPK());
+		sb.append(", statusId=");
+		sb.append(getStatusId());
+		sb.append(", comment=");
+		sb.append(getComment());
+		sb.append(", parentTaskId=");
+		sb.append(getParentTaskId());
 		sb.append("}");
 
 		return sb.toString();
@@ -820,7 +986,7 @@ public class TaskClp extends BaseModelImpl<Task> implements Task {
 
 	@Override
 	public String toXmlString() {
-		StringBundler sb = new StringBundler(49);
+		StringBundler sb = new StringBundler(64);
 
 		sb.append("<model><model-name>");
 		sb.append("home.cvicente.livetasks.model.Task");
@@ -886,6 +1052,26 @@ public class TaskClp extends BaseModelImpl<Task> implements Task {
 			"<column><column-name>description</column-name><column-value><![CDATA[");
 		sb.append(getDescription());
 		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>asigneeClasName</column-name><column-value><![CDATA[");
+		sb.append(getAsigneeClasName());
+		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>asigneeClassPK</column-name><column-value><![CDATA[");
+		sb.append(getAsigneeClassPK());
+		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>statusId</column-name><column-value><![CDATA[");
+		sb.append(getStatusId());
+		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>comment</column-name><column-value><![CDATA[");
+		sb.append(getComment());
+		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>parentTaskId</column-name><column-value><![CDATA[");
+		sb.append(getParentTaskId());
+		sb.append("]]></column-value></column>");
 
 		sb.append("</model>");
 
@@ -909,5 +1095,10 @@ public class TaskClp extends BaseModelImpl<Task> implements Task {
 	private long _typeId;
 	private String _title;
 	private String _description;
+	private String _asigneeClasName;
+	private long _asigneeClassPK;
+	private long _statusId;
+	private long _comment;
+	private long _parentTaskId;
 	private BaseModel<?> _taskRemoteModel;
 }

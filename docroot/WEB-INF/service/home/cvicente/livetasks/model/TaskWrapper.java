@@ -65,6 +65,11 @@ public class TaskWrapper implements Task, ModelWrapper<Task> {
 		attributes.put("typeId", getTypeId());
 		attributes.put("title", getTitle());
 		attributes.put("description", getDescription());
+		attributes.put("asigneeClasName", getAsigneeClasName());
+		attributes.put("asigneeClassPK", getAsigneeClassPK());
+		attributes.put("statusId", getStatusId());
+		attributes.put("comment", getComment());
+		attributes.put("parentTaskId", getParentTaskId());
 
 		return attributes;
 	}
@@ -159,6 +164,36 @@ public class TaskWrapper implements Task, ModelWrapper<Task> {
 
 		if (description != null) {
 			setDescription(description);
+		}
+
+		String asigneeClasName = (String)attributes.get("asigneeClasName");
+
+		if (asigneeClasName != null) {
+			setAsigneeClasName(asigneeClasName);
+		}
+
+		Long asigneeClassPK = (Long)attributes.get("asigneeClassPK");
+
+		if (asigneeClassPK != null) {
+			setAsigneeClassPK(asigneeClassPK);
+		}
+
+		Long statusId = (Long)attributes.get("statusId");
+
+		if (statusId != null) {
+			setStatusId(statusId);
+		}
+
+		Long comment = (Long)attributes.get("comment");
+
+		if (comment != null) {
+			setComment(comment);
+		}
+
+		Long parentTaskId = (Long)attributes.get("parentTaskId");
+
+		if (parentTaskId != null) {
+			setParentTaskId(parentTaskId);
 		}
 	}
 
@@ -524,6 +559,106 @@ public class TaskWrapper implements Task, ModelWrapper<Task> {
 	@Override
 	public void setDescription(java.lang.String description) {
 		_task.setDescription(description);
+	}
+
+	/**
+	* Returns the asignee clas name of this task.
+	*
+	* @return the asignee clas name of this task
+	*/
+	@Override
+	public java.lang.String getAsigneeClasName() {
+		return _task.getAsigneeClasName();
+	}
+
+	/**
+	* Sets the asignee clas name of this task.
+	*
+	* @param asigneeClasName the asignee clas name of this task
+	*/
+	@Override
+	public void setAsigneeClasName(java.lang.String asigneeClasName) {
+		_task.setAsigneeClasName(asigneeClasName);
+	}
+
+	/**
+	* Returns the asignee class p k of this task.
+	*
+	* @return the asignee class p k of this task
+	*/
+	@Override
+	public long getAsigneeClassPK() {
+		return _task.getAsigneeClassPK();
+	}
+
+	/**
+	* Sets the asignee class p k of this task.
+	*
+	* @param asigneeClassPK the asignee class p k of this task
+	*/
+	@Override
+	public void setAsigneeClassPK(long asigneeClassPK) {
+		_task.setAsigneeClassPK(asigneeClassPK);
+	}
+
+	/**
+	* Returns the status ID of this task.
+	*
+	* @return the status ID of this task
+	*/
+	@Override
+	public long getStatusId() {
+		return _task.getStatusId();
+	}
+
+	/**
+	* Sets the status ID of this task.
+	*
+	* @param statusId the status ID of this task
+	*/
+	@Override
+	public void setStatusId(long statusId) {
+		_task.setStatusId(statusId);
+	}
+
+	/**
+	* Returns the comment of this task.
+	*
+	* @return the comment of this task
+	*/
+	@Override
+	public long getComment() {
+		return _task.getComment();
+	}
+
+	/**
+	* Sets the comment of this task.
+	*
+	* @param comment the comment of this task
+	*/
+	@Override
+	public void setComment(long comment) {
+		_task.setComment(comment);
+	}
+
+	/**
+	* Returns the parent task ID of this task.
+	*
+	* @return the parent task ID of this task
+	*/
+	@Override
+	public long getParentTaskId() {
+		return _task.getParentTaskId();
+	}
+
+	/**
+	* Sets the parent task ID of this task.
+	*
+	* @param parentTaskId the parent task ID of this task
+	*/
+	@Override
+	public void setParentTaskId(long parentTaskId) {
+		_task.setParentTaskId(parentTaskId);
 	}
 
 	/**

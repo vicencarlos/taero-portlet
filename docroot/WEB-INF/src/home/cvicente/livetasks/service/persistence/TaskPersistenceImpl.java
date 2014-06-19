@@ -1794,6 +1794,11 @@ public class TaskPersistenceImpl extends BasePersistenceImpl<Task>
 		taskImpl.setTypeId(task.getTypeId());
 		taskImpl.setTitle(task.getTitle());
 		taskImpl.setDescription(task.getDescription());
+		taskImpl.setAsigneeClasName(task.getAsigneeClasName());
+		taskImpl.setAsigneeClassPK(task.getAsigneeClassPK());
+		taskImpl.setStatusId(task.getStatusId());
+		taskImpl.setComment(task.getComment());
+		taskImpl.setParentTaskId(task.getParentTaskId());
 
 		return taskImpl;
 	}
@@ -2116,7 +2121,7 @@ public class TaskPersistenceImpl extends BasePersistenceImpl<Task>
 				PropsKeys.HIBERNATE_CACHE_USE_SECOND_LEVEL_CACHE));
 	private static Log _log = LogFactoryUtil.getLog(TaskPersistenceImpl.class);
 	private static Set<String> _badColumnNames = SetUtil.fromArray(new String[] {
-				"uuid"
+				"uuid", "comment"
 			});
 	private static Task _nullTask = new TaskImpl() {
 			@Override

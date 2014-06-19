@@ -17,7 +17,7 @@ package home.cvicente.livetasks.model;
 import com.liferay.portal.model.PersistedModel;
 
 /**
- * The extended model interface for the TaskType service. Represents a row in the &quot;lvt_TaskType&quot; database table, with each column mapped to a property of this class.
+ * The extended model interface for the TaskType service. Represents a row in the &quot;taero_TaskType&quot; database table, with each column mapped to a property of this class.
  *
  * @author cvicente
  * @see TaskTypeModel

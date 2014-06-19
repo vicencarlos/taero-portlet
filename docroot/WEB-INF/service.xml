@@ -2,7 +2,7 @@
 <!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
 <service-builder package-path="home.cvicente.livetasks">
 	<author>cvicente</author>
-	<namespace>lvt</namespace>
+	<namespace>taero</namespace>
 <entity name="TaskType" uuid="true" local-service="true" remote-service="true" json-enabled="false"
                          >
 
@@ -64,6 +64,11 @@
 				<column name="typeId" type="long" json-enabled="false"/>
                 <column name="title" type="String"/>
                 <column name="description" type="String"/>
+                <column name="asigneeClasName" type="String" />
+                <column name="asigneeClassPK" type="long" />
+                <column name="statusId" type="long" />
+                <column name="comment" type="long" />
+                <column name="parentTaskId" type="long" />
 	 <reference package-path="com.liferay.portal" entity="ResourcePermission" />
                 <reference package-path="com.liferay.portlet.asset" entity="AssetEntry" />
 	

@@ -15,7 +15,7 @@
 package home.cvicente.livetasks.model.impl;
 
 /**
- * The extended model implementation for the TaskType service. Represents a row in the &quot;lvt_TaskType&quot; database table, with each column mapped to a property of this class.
+ * The extended model implementation for the TaskType service. Represents a row in the &quot;taero_TaskType&quot; database table, with each column mapped to a property of this class.
  *
  * <p>
  * Helper methods and all application logic should be put in this class. Whenever methods are added, rerun ServiceBuilder to copy their definitions into the {@link home.cvicente.livetasks.model.TaskType} interface.

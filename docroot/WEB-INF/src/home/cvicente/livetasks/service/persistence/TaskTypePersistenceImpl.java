@@ -3504,16 +3504,16 @@ public class TaskTypePersistenceImpl extends BasePersistenceImpl<TaskType>
 	private static final String _SQL_COUNT_TASKTYPE = "SELECT COUNT(taskType) FROM TaskType taskType";
 	private static final String _SQL_COUNT_TASKTYPE_WHERE = "SELECT COUNT(taskType) FROM TaskType taskType WHERE ";
 	private static final String _FILTER_ENTITY_TABLE_FILTER_PK_COLUMN = "taskType.typeId";
-	private static final String _FILTER_SQL_SELECT_TASKTYPE_WHERE = "SELECT DISTINCT {taskType.*} FROM lvt_TaskType taskType WHERE ";
+	private static final String _FILTER_SQL_SELECT_TASKTYPE_WHERE = "SELECT DISTINCT {taskType.*} FROM taero_TaskType taskType WHERE ";
 	private static final String _FILTER_SQL_SELECT_TASKTYPE_NO_INLINE_DISTINCT_WHERE_1 =
-		"SELECT {lvt_TaskType.*} FROM (SELECT DISTINCT taskType.typeId FROM lvt_TaskType taskType WHERE ";
+		"SELECT {taero_TaskType.*} FROM (SELECT DISTINCT taskType.typeId FROM taero_TaskType taskType WHERE ";
 	private static final String _FILTER_SQL_SELECT_TASKTYPE_NO_INLINE_DISTINCT_WHERE_2 =
-		") TEMP_TABLE INNER JOIN lvt_TaskType ON TEMP_TABLE.typeId = lvt_TaskType.typeId";
-	private static final String _FILTER_SQL_COUNT_TASKTYPE_WHERE = "SELECT COUNT(DISTINCT taskType.typeId) AS COUNT_VALUE FROM lvt_TaskType taskType WHERE ";
+		") TEMP_TABLE INNER JOIN taero_TaskType ON TEMP_TABLE.typeId = taero_TaskType.typeId";
+	private static final String _FILTER_SQL_COUNT_TASKTYPE_WHERE = "SELECT COUNT(DISTINCT taskType.typeId) AS COUNT_VALUE FROM taero_TaskType taskType WHERE ";
 	private static final String _FILTER_ENTITY_ALIAS = "taskType";
-	private static final String _FILTER_ENTITY_TABLE = "lvt_TaskType";
+	private static final String _FILTER_ENTITY_TABLE = "taero_TaskType";
 	private static final String _ORDER_BY_ENTITY_ALIAS = "taskType.";
-	private static final String _ORDER_BY_ENTITY_TABLE = "lvt_TaskType.";
+	private static final String _ORDER_BY_ENTITY_TABLE = "taero_TaskType.";
 	private static final String _NO_SUCH_ENTITY_WITH_PRIMARY_KEY = "No TaskType exists with the primary key ";
 	private static final String _NO_SUCH_ENTITY_WITH_KEY = "No TaskType exists with the key {";
 	private static final boolean _HIBERNATE_CACHE_USE_SECOND_LEVEL_CACHE = GetterUtil.getBoolean(PropsUtil.get(

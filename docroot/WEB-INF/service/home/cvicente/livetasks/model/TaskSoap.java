@@ -46,6 +46,11 @@ public class TaskSoap implements Serializable {
 		soapModel.setTypeId(model.getTypeId());
 		soapModel.setTitle(model.getTitle());
 		soapModel.setDescription(model.getDescription());
+		soapModel.setAsigneeClasName(model.getAsigneeClasName());
+		soapModel.setAsigneeClassPK(model.getAsigneeClassPK());
+		soapModel.setStatusId(model.getStatusId());
+		soapModel.setComment(model.getComment());
+		soapModel.setParentTaskId(model.getParentTaskId());
 
 		return soapModel;
 	}
@@ -218,6 +223,46 @@ public class TaskSoap implements Serializable {
 		_description = description;
 	}
 
+	public String getAsigneeClasName() {
+		return _asigneeClasName;
+	}
+
+	public void setAsigneeClasName(String asigneeClasName) {
+		_asigneeClasName = asigneeClasName;
+	}
+
+	public long getAsigneeClassPK() {
+		return _asigneeClassPK;
+	}
+
+	public void setAsigneeClassPK(long asigneeClassPK) {
+		_asigneeClassPK = asigneeClassPK;
+	}
+
+	public long getStatusId() {
+		return _statusId;
+	}
+
+	public void setStatusId(long statusId) {
+		_statusId = statusId;
+	}
+
+	public long getComment() {
+		return _comment;
+	}
+
+	public void setComment(long comment) {
+		_comment = comment;
+	}
+
+	public long getParentTaskId() {
+		return _parentTaskId;
+	}
+
+	public void setParentTaskId(long parentTaskId) {
+		_parentTaskId = parentTaskId;
+	}
+
 	private String _uuid;
 	private long _taskId;
 	private long _companyId;
@@ -233,4 +278,9 @@ public class TaskSoap implements Serializable {
 	private long _typeId;
 	private String _title;
 	private String _description;
+	private String _asigneeClasName;
+	private long _asigneeClassPK;
+	private long _statusId;
+	private long _comment;
+	private long _parentTaskId;
 }

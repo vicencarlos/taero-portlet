@@ -37,7 +37,7 @@ import java.util.Date;
 public class TaskCacheModel implements CacheModel<Task>, Externalizable {
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(31);
+		StringBundler sb = new StringBundler(41);
 
 		sb.append("{uuid=");
 		sb.append(uuid);
@@ -69,6 +69,16 @@ public class TaskCacheModel implements CacheModel<Task>, Externalizable {
 		sb.append(title);
 		sb.append(", description=");
 		sb.append(description);
+		sb.append(", asigneeClasName=");
+		sb.append(asigneeClasName);
+		sb.append(", asigneeClassPK=");
+		sb.append(asigneeClassPK);
+		sb.append(", statusId=");
+		sb.append(statusId);
+		sb.append(", comment=");
+		sb.append(comment);
+		sb.append(", parentTaskId=");
+		sb.append(parentTaskId);
 		sb.append("}");
 
 		return sb.toString();
@@ -144,6 +154,18 @@ public class TaskCacheModel implements CacheModel<Task>, Externalizable {
 			taskImpl.setDescription(description);
 		}
 
+		if (asigneeClasName == null) {
+			taskImpl.setAsigneeClasName(StringPool.BLANK);
+		}
+		else {
+			taskImpl.setAsigneeClasName(asigneeClasName);
+		}
+
+		taskImpl.setAsigneeClassPK(asigneeClassPK);
+		taskImpl.setStatusId(statusId);
+		taskImpl.setComment(comment);
+		taskImpl.setParentTaskId(parentTaskId);
+
 		taskImpl.resetOriginalValues();
 
 		return taskImpl;
@@ -166,6 +188,11 @@ public class TaskCacheModel implements CacheModel<Task>, Externalizable {
 		typeId = objectInput.readLong();
 		title = objectInput.readUTF();
 		description = objectInput.readUTF();
+		asigneeClasName = objectInput.readUTF();
+		asigneeClassPK = objectInput.readLong();
+		statusId = objectInput.readLong();
+		comment = objectInput.readLong();
+		parentTaskId = objectInput.readLong();
 	}
 
 	@Override
@@ -218,6 +245,18 @@ public class TaskCacheModel implements CacheModel<Task>, Externalizable {
 		else {
 			objectOutput.writeUTF(description);
 		}
+
+		if (asigneeClasName == null) {
+			objectOutput.writeUTF(StringPool.BLANK);
+		}
+		else {
+			objectOutput.writeUTF(asigneeClasName);
+		}
+
+		objectOutput.writeLong(asigneeClassPK);
+		objectOutput.writeLong(statusId);
+		objectOutput.writeLong(comment);
+		objectOutput.writeLong(parentTaskId);
 	}
 
 	public String uuid;
@@ -235,4 +274,9 @@ public class TaskCacheModel implements CacheModel<Task>, Externalizable {
 	public long typeId;
 	public String title;
 	public String description;
+	public String asigneeClasName;
+	public long asigneeClassPK;
+	public long statusId;
+	public long comment;
+	public long parentTaskId;
 }

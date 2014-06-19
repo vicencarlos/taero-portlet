@@ -17,6 +17,11 @@
 		<field name="typeId" type="long" />
 		<field name="title" type="String" />
 		<field name="description" type="String" />
+		<field name="asigneeClasName" type="String" />
+		<field name="asigneeClassPK" type="long" />
+		<field name="statusId" type="long" />
+		<field name="comment" type="long" />
+		<field name="parentTaskId" type="long" />
 	</model>
 	<model name="home.cvicente.livetasks.model.TaskType">
 		<field name="uuid" type="String" />
@@ -32,6 +37,9 @@
 		<field name="statusByUserName" type="String" />
 		<field name="statusDate" type="Date" />
 		<field name="title" type="String" />
-		<field name="description" type="String" />
+		<field name="description" type="String">
+			<hint name="display-width">1024</hint>
+			<hint name="max-length">500000</hint>
+		</field>
 	</model>
 </model-hints>
